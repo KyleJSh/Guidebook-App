@@ -251,30 +251,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qeE-uK-b1E">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UKN-YZ-Rnb">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="hdb-km-fwc">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hdb-km-fwc" id="ftB-t0-DtA">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qeE-uK-b1E">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="768"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="hdb-km-fwc">
+                                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hdb-km-fwc" id="ftB-t0-DtA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDW-Dc-Xcv">
+                                        <rect key="frame" x="0.0" y="768" width="414" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="zhm-te-REQ"/>
+                                        </constraints>
+                                        <state key="normal" title="Add Note"/>
+                                        <connections>
+                                            <action selector="addNoteTapped:" destination="vic-Gf-tmc" eventType="touchUpInside" id="f1x-Be-Urk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="qeE-uK-b1E" secondAttribute="trailing" id="0u7-aj-hAe"/>
+                                    <constraint firstAttribute="bottom" secondItem="qeE-uK-b1E" secondAttribute="bottom" id="2R7-1f-nSa"/>
+                                    <constraint firstItem="qeE-uK-b1E" firstAttribute="top" secondItem="UKN-YZ-Rnb" secondAttribute="top" id="QEM-9u-bka"/>
+                                    <constraint firstItem="qeE-uK-b1E" firstAttribute="leading" secondItem="UKN-YZ-Rnb" secondAttribute="leading" id="aSb-Zt-8we"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="f5W-gj-DzG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="qeE-uK-b1E" firstAttribute="leading" secondItem="f5W-gj-DzG" secondAttribute="leading" id="8kD-bA-Bhn"/>
-                            <constraint firstItem="f5W-gj-DzG" firstAttribute="trailing" secondItem="qeE-uK-b1E" secondAttribute="trailing" id="Tle-uP-g95"/>
-                            <constraint firstItem="qeE-uK-b1E" firstAttribute="top" secondItem="f5W-gj-DzG" secondAttribute="top" id="jM0-h9-phV"/>
-                            <constraint firstItem="f5W-gj-DzG" firstAttribute="bottom" secondItem="qeE-uK-b1E" secondAttribute="bottom" id="yh9-iZ-5oE"/>
+                            <constraint firstItem="UKN-YZ-Rnb" firstAttribute="bottom" secondItem="f5W-gj-DzG" secondAttribute="bottom" id="0dQ-NB-ujL"/>
+                            <constraint firstItem="UKN-YZ-Rnb" firstAttribute="leading" secondItem="f5W-gj-DzG" secondAttribute="leading" id="IMk-Tx-5pA"/>
+                            <constraint firstItem="UKN-YZ-Rnb" firstAttribute="top" secondItem="f5W-gj-DzG" secondAttribute="top" id="LzS-Z7-wzR"/>
+                            <constraint firstItem="UKN-YZ-Rnb" firstAttribute="trailing" secondItem="f5W-gj-DzG" secondAttribute="trailing" id="fW8-9I-e6t"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="qeE-uK-b1E" id="Vga-Gg-Hyw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KfG-jB-aSR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -283,7 +307,7 @@
         <!--Add Note View Controller-->
         <scene sceneID="8rY-5Q-bQr">
             <objects>
-                <viewController storyboardIdentifier="AddNote" id="LKt-Gd-Zet" customClass="AddNoteViewController" customModule="Guidebook_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddNoteVC" id="LKt-Gd-Zet" customClass="AddNoteViewController" customModule="Guidebook_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tIv-FG-0oI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -297,7 +321,6 @@
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Np9-Pf-Ojs">
                                                 <rect key="frame" x="0.0" y="0.0" width="294" height="308"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -310,11 +333,17 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="kou-SS-B8u"/>
                                                         </constraints>
-                                                        <state key="normal" title="Button"/>
+                                                        <state key="normal" title="Cancel"/>
+                                                        <connections>
+                                                            <action selector="cancelTapped:" destination="LKt-Gd-Zet" eventType="touchUpInside" id="tHg-sq-bjH"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxd-JQ-lqp">
                                                         <rect key="frame" x="147" y="0.0" width="147" height="50"/>
-                                                        <state key="normal" title="Button"/>
+                                                        <state key="normal" title="Save"/>
+                                                        <connections>
+                                                            <action selector="saveTapped:" destination="LKt-Gd-Zet" eventType="touchUpInside" id="hvZ-Te-7vJ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -339,6 +368,10 @@
                             <constraint firstItem="BVp-c8-aH1" firstAttribute="trailing" secondItem="UMW-Uc-4xF" secondAttribute="trailing" constant="40" id="ZOy-yh-IV0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cardView" destination="UMW-Uc-4xF" id="fsG-Ls-74z"/>
+                        <outlet property="textView" destination="Np9-Pf-Ojs" id="78v-3w-6j2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NwS-ir-BnB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
