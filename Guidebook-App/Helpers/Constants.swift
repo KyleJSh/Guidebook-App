@@ -5,9 +5,10 @@
 //  Created by Kyle Sherrington on 2021-03-15.
 //
 
+
 import Foundation
 
-struct Constants {
+class Constants {
     
     // Flag that determines whether or not this is the first launch
     static var PRELOAD_DATA = "Preload"

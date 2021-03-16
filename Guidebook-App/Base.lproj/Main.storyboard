@@ -279,12 +279,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="qeE-uK-b1E" secondAttribute="trailing" id="0u7-aj-hAe"/>
-                                    <constraint firstAttribute="bottom" secondItem="qeE-uK-b1E" secondAttribute="bottom" id="2R7-1f-nSa"/>
-                                    <constraint firstItem="qeE-uK-b1E" firstAttribute="top" secondItem="UKN-YZ-Rnb" secondAttribute="top" id="QEM-9u-bka"/>
-                                    <constraint firstItem="qeE-uK-b1E" firstAttribute="leading" secondItem="UKN-YZ-Rnb" secondAttribute="leading" id="aSb-Zt-8we"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="f5W-gj-DzG"/>

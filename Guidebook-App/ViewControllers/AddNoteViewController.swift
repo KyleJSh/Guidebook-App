@@ -5,20 +5,21 @@
 //  Created by Kyle Sherrington on 2021-03-16.
 //
 
+
 import UIKit
+import CoreData
 
 class AddNoteViewController: UIViewController {
 
     // MARK: - Variables and Properties
-        
-    private var appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    // get reference to Core Data
+    private let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    @IBOutlet weak var textView: UITextView!
-    
     @IBOutlet weak var cardView: UIView!
+    
+    @IBOutlet weak var textView: UITextView!
     
     var place:Place?
     
@@ -40,9 +41,7 @@ class AddNoteViewController: UIViewController {
 // MARK: - Methods
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         dismiss(animated: true, completion: nil)
-        
     }
     
     @IBAction func cancelTapped(_ sender: Any) {
@@ -62,6 +61,9 @@ class AddNoteViewController: UIViewController {
         
         // Save the core data context
         appDelegate.saveContext()
+        
+        // Dismiss popup when save is tapped
+        dismiss(animated: true, completion: nil)
     }
     
 }
