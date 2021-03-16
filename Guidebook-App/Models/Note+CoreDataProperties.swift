@@ -2,7 +2,7 @@
 //  Note+CoreDataProperties.swift
 //  Guidebook-App
 //
-//  Created by Kyle Sherrington on 2021-03-15.
+//  Created by Kyle Sherrington on 2021-03-16.
 //
 //
 
@@ -16,8 +16,9 @@ extension Note {
         return NSFetchRequest<Note>(entityName: "Note")
     }
 
-    @NSManaged public var text: String?
     @NSManaged public var date: Date?
+    @NSManaged public var text: String?
+    @NSManaged public var place: Place?
 
 }
 
