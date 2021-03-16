@@ -5,6 +5,7 @@
 //  Created by Kyle Sherrington on 2021-03-15.
 //
 
+
 import UIKit
 import CoreData
 
@@ -22,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    // MARK: Preload Data
+    // MARK: - Preload Data
     
     private func preloadData() {
         
@@ -39,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // If so, parse JSON file into Core Data
             
             // Get a path to the local JSON file
-            let path = Bundle.main.path(forResource: "PreloadedData", ofType: "json")
+            let path = Bundle.main.path(forResource: "preloadedData", ofType: "json")
             
             // Check that the path isn't nil
             guard path != nil else {
@@ -48,20 +49,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             
             // Create a URL to it
-            
             let url = URL(fileURLWithPath: path!)
                         
             do {
                 
                 // Get the data for the file
-
                 let data = try Data(contentsOf: url)
                 
                 // Try turning the data into a json object
                 let jsonArray = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [ [String:Any] ]
                 
                 // Loop through the json objects
-                
                 for d in jsonArray {
                     
                     // Creat a place object and populate properties
