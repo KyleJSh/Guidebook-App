@@ -19,5 +19,6 @@ class Constants {
     static var ADDNOTES_VIEWCONTROLLER = "AddNoteVC"
     
     static var PLACE_CELL = "PlaceCell"
+    static var NOTE_CELL = "NoteCell"
 }
 
