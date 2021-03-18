@@ -15,6 +15,8 @@ class NotesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    private let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var fetchedNotesRC:NSFetchedResultsController<Note>?
@@ -115,14 +117,39 @@ extension NotesViewController: UITableViewDelegate, UITableViewDataSource {
         
         if let note = note {
             
-            dateLabel.text = "June 2020"
+            let df = DateFormatter()
+            df.dateFormat = "MMM d, yyy - h:mm a"
+            
+            dateLabel.text = df.string(from: note.date!)
             noteLabel.text = note.text
             
         }
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, nil) in
+            
+            // Check it isn't nil
+            if self.fetchedNotesRC == nil {
+                return
+            }
+            
+            // Get a reference to the note to be deleted
+            let n = self.fetchedNotesRC!.object(at: indexPath)
+            
+            // Pass it to the core data context delete method
+            self.context.delete(n)
+            
+            // Save the context
+            self.appDelegate.saveContext()
+            
+            // Refetch results and refresh table view
+            self.refresh()
+        }
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
     
     
 }
